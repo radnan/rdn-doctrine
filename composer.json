@@ -1,0 +1,25 @@
+{
+	"name": "radnan/rdn-doctrine",
+	"description": "Zend Framework 2 Doctrine ORM bridge",
+	"keywords": ["zf2", "zend", "doctrine", "orm"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "radnan",
+			"email": "rafiadnan47@gmail.com"
+		}
+	],
+	"require": {
+		"doctrine/orm": "2.*",
+		"radnan/rdn-console": "1.*",
+		"radnan/rdn-database": "1.*",
+		"radnan/rdn-factory": "1.*",
+		"zendframework/zend-mvc": "2.*",
+		"zendframework/zend-servicemanager": "2.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"RdnDoctrine\\": "src/"
+		}
+	}
+}
