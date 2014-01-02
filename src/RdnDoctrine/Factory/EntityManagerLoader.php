@@ -246,7 +246,7 @@ class EntityManagerLoader implements AbstractFactoryInterface
 		}
 		else
 		{
-			throw new \RuntimeException("Must specify 'connection' parameters");
+			throw new \RuntimeException("Must specify 'connection' parameters as a string or an array");
 		}
 
 		return $conn;
