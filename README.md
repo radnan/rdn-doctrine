@@ -101,14 +101,6 @@ return array(
 	'rdn_entity_managers' => array(
 		'managers' => array(
 			'App' => array(
-				'entity_namespaces' => array(
-					'Foo' => 'Foo\\Entity',
-				),
-
-				'metadata_paths' => array(
-					'Foo' => __DIR__ .'/../src/Foo/Entity',
-				),
-
 				'table_prefixes' => array(
 					'Foo' => 'foo__',
 				),

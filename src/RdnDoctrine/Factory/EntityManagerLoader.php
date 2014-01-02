@@ -46,7 +46,11 @@ class EntityManagerLoader implements AbstractFactoryInterface
 		$spec = $config['rdn_entity_managers']['managers'][$rName];
 
 		$modules = $services->get('ModuleManager');
-		$module = $modules->getModule($rName);
+		$moduleNames = array_keys($config['rdn_entity_managers']['modules'], $rName);
+		if (!in_array($rName, $moduleNames))
+		{
+			$moduleNames[] = $rName;
+		}
 
 		$defaultSpec = array(
 			'cache_provider' => 'ArrayCache',
@@ -71,26 +75,37 @@ class EntityManagerLoader implements AbstractFactoryInterface
 
 			'log_sql' => true,
 		);
-		if ($module)
+		foreach ($moduleNames as $moduleName)
 		{
-			$mName = strstr(get_class($module), '\\', true);
-
-			if (!isset($spec['entity_namespaces'][$mName]))
+			$module = $services->get('ModuleManager')->getModule($moduleName);
+			if ($module)
 			{
-				$spec['entity_namespaces'][$mName] = $mName .'\\Entity';
-			}
+				$mName = strstr(get_class($module), '\\', true);
 
-			if (!isset($spec['metadata_paths'][$mName]))
-			{
-				$ref = new \ReflectionClass($module);
-				$path = dirname($ref->getFileName());
+				if (!isset($spec['entity_namespaces'][$mName]))
+				{
+					$spec['entity_namespaces'][$mName] = $mName .'\\Entity';
+				}
 
-				$spec['metadata_paths'][$mName] = $path.'/Entity';
-			}
+				if (!isset($spec['metadata_paths'][$mName]))
+				{
+					if (method_exists($module, 'getPath'))
+					{
+						$path = $module->getPath();
+					}
+					else
+					{
+						$ref = new \ReflectionClass($module);
+						$path = dirname($ref->getFileName());
+					}
 
-			if (!isset($spec['proxy_namespace']))
-			{
-				$spec['proxy_namespace'] = $mName .'\\Entity\Proxy';
+					$spec['metadata_paths'][$mName] = $path .'/Entity';
+				}
+
+				if (!isset($spec['proxy_namespace']))
+				{
+					$spec['proxy_namespace'] = $mName .'\\Entity\Proxy';
+				}
 			}
 		}
 		$spec = ArrayUtils::merge($defaultSpec, $spec);
