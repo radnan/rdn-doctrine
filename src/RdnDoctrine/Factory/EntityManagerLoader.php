@@ -101,11 +101,11 @@ class EntityManagerLoader implements AbstractFactoryInterface
 
 					$spec['metadata_paths'][$mName] = $path .'/Entity';
 				}
+			}
 
-				if (!isset($spec['proxy_namespace']))
-				{
-					$spec['proxy_namespace'] = $mName .'\\Entity\Proxy';
-				}
+			if (!isset($spec['proxy_namespace']))
+			{
+				$spec['proxy_namespace'] = $rName .'\\Entity\Proxy';
 			}
 		}
 		$spec = ArrayUtils::merge($defaultSpec, $spec);
