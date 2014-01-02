@@ -114,7 +114,7 @@ return array(
 );
 ~~~
 
-This will add the entities provided by **Foo** to the **App** entity manager and instruct all plugins to use the **App** entity manager from within the **Foo** module.
+This will add the entities provided by **Foo** (in the `Foo\Entity` namespace) to the **App** entity manager and instruct all plugins to use the **App** entity manager from within the **Foo** module.
 
 ~~~php
 namespace Foo\Controller;
