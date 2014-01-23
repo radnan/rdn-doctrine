@@ -12,6 +12,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Command line utility to create schema for doctrine entities.
+ * 
+ * @author Blake Harley <blake@blakeharley.com>
  */
 class Schema extends AbstractCommand
 {

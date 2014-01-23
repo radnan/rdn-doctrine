@@ -7,6 +7,9 @@ use Zend\EventManager\EventManager;
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerInterface;
 
+/**
+ * @author Blake Harley <blake@blakeharley.com>
+ */
 class Profiler implements SQLLogger, EventManagerAwareInterface
 {
 	const EVENT_LOG_QUERY = 'log.query';
