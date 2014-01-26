@@ -177,7 +177,7 @@ class EntityManagerLoader implements AbstractFactoryInterface
 
 	protected function setupProxies(Configuration $config, $spec)
 	{
-		$config->setProxyDir($spec['proxy_path']);
+		$config->setProxyDir($spec['proxy_dir']);
 		$config->setProxyNamespace($spec['proxy_namespace']);
 		$config->setAutoGenerateProxyClasses($spec['proxy_autogenerate']);
 	}

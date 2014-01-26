@@ -66,7 +66,7 @@ return array(
 
 				'proxy_autogenerate' => \Doctrine\ORM\Proxy\ProxyFactory::AUTOGENERATE_ALWAYS,
 				'proxy_namespace' => null,
-				'proxy_path' => 'data/proxies',
+				'proxy_dir' => 'data/proxies',
 
 				'log_sql' => true,
 			),

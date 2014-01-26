@@ -146,7 +146,7 @@ Namespace for generated entity classes.
 
 **Default:** `'<ManagerName>\\Entity\\Proxy'`
 
-### `proxy_path`
+### `proxy_dir`
 
 The filepath where generated proxy classes will be stored.
 
