@@ -14,9 +14,9 @@ class Module implements DependencyIndicatorInterface
 
 	public function init(ModuleManager $modules)
 	{
-		$modules->loadModule('RdnConsole');
-		$modules->loadModule('RdnDatabase');
-		$modules->loadModule('RdnFactory');
+//		$modules->loadModule('RdnConsole');
+//		$modules->loadModule('RdnDatabase');
+//		$modules->loadModule('RdnFactory');
 	}
 
 	/**
