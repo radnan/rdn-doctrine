@@ -44,7 +44,7 @@ class Profiler implements SQLLogger, EventManagerAwareInterface
 			'parameters' => $params,
 			'types' => $types,
 			'start' => microtime(true),
-			'end' => null,
+			'stop' => null,
 			'elapse' => null,
 			'logged' => false,
 		);
@@ -52,8 +52,8 @@ class Profiler implements SQLLogger, EventManagerAwareInterface
 
 	public function stopQuery()
 	{
-		$this->profiles[$this->index]['end'] = microtime(true);
-		$this->profiles[$this->index]['elapse'] = $this->profiles[$this->index]['end'] - $this->profiles[$this->index]['start'];
+		$this->profiles[$this->index]['stop'] = microtime(true);
+		$this->profiles[$this->index]['elapse'] = $this->profiles[$this->index]['stop'] - $this->profiles[$this->index]['start'];
 
 		if ($this->isLogging)
 		{
