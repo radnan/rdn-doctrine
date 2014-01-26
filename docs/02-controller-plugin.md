@@ -1,4 +1,4 @@
-Controller Plugin
+Controller plugin
 =================
 
 Once an entity manager has been configured, you can access both the entity manager or entity repositories from your controller using the `entity()` plugin.

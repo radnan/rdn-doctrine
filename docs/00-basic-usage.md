@@ -1,4 +1,4 @@
-Basic Usage
+Basic usage
 ===========
 
 Entity managers can be registered with the `RdnDoctrine\EntityManagerManager` service locator using the `rdn_entity_managers` configuration option.
