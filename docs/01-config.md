@@ -106,7 +106,7 @@ The default is created dynamically by using the **ModuleName** as the key and **
 
 The `RdnDoctrine\EntityManager\AliasResolver` service is used to resolve aliases when one is not provided.
 
-**Default:** `array('ModuleName' => 'ModuleName\\Entity')`
+**Default:** `array('<ModuleName>' => '<ModuleName>\\Entity')`
 
 ### `metadata_paths`
 
@@ -116,7 +116,7 @@ The default is created dynamically by using the **ModuleName** as the key and **
 
 [Doctrine documentation on metadata paths](http://docs.doctrine-project.org/en/latest/reference/advanced-configuration.html#metadata-driver-required)
 
-**Default:** `array('ModuleName' => 'ModuleName\\Entity')`
+**Default:** `array('<ModuleName>' => '<ModuleName>\\Entity')`
 
 ### `table_prefixes`
 
