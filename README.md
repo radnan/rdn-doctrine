@@ -5,7 +5,41 @@ The **RdnDoctrine** ZF2 module is a simple bridge to the Doctrine ORM library.
 
 ## How to install
 
-This module is still under development.
+1. Use `composer` to require the `radnan/rdn-doctrine` package:
+
+   ~~~bash
+   $ composer require radnan/rdn-doctrine:1.*
+   ~~~
+
+2. Activate the module by including it in your `application.config.php` file:
+
+   ~~~php
+   <?php
+
+   return array(
+       'modules' => array(
+           'RdnDoctrine',
+           // ...
+       ),
+   );
+   ~~~
+
+### Dependencies
+
+This module relies on the modules: [RdnConsole](/radnan/rdn-console), [RdnDatabase](/radnan/rdn-database), and [RdnFactory](/radnan/rdn-factory). I've submitted a [pull request](https://github.com/zendframework/zf2/pull/5651) to automate this step, but for now you have to specify them manually.
+~~~php
+<?php
+
+return array(
+    'modules' => array(
+        'RdnConsole',
+        'RdnDatabase',
+        'RdnFactory',
+        'RdnDoctrine',
+        // ...
+    ),
+);
+~~~
 
 ## How to use
 
@@ -77,6 +111,8 @@ class User
 {
 	public function editAction()
 	{
+		$id = $this->params('user-id');
+
 		$user = $this->entity('User')->find($id);
 
 		/**
