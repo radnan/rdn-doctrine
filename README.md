@@ -40,7 +40,9 @@ Configuring an entity manager is as simple as that! Here we've configured an ent
 
 By default, the manager will expect your entities to live inside the `App\Entity` namespace (or more generally `<MANAGER-NAME>\Entity`).
 
-### Controller Plugin
+[Configuration documentation](docs/01-configuration.md)
+
+### Controller plugin
 
 Once an entity manager has been configured, you can access both the entity manager or entity repositories from your controller using the `entity()` plugin.
 
