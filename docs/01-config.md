@@ -42,6 +42,8 @@ If case of a **string**, the loader will use the `RdnDatabase\Adapter\AdapterMan
 
 If case of an **array**, the loader will simply pass it as the first argument to the `Doctrine\ORM\EntityManager::create()` method.
 
+[RdnDatabase documentation](https://github.com/radnan/rdn-database#how-to-use)
+
 **Default:** `'default'`
 
 ### `custom_hydration_modes`
