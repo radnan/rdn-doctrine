@@ -19,7 +19,7 @@ class SchemaCreate extends AbstractCommandFactory
 	public function configure()
 	{
 		$this->adapter
-			->setName('rdn-doctrine:schema:'. $this->name)
+			->setName('doctrine:schema:'. $this->name)
 			->setDescription($this->verbs['simple'] .' schema for entities or generate the SQL output')
 			->addArgument(
 				'manager',

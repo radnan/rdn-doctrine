@@ -11,7 +11,7 @@ class ProxiesGenerate extends AbstractCommandFactory
 	public function configure()
 	{
 		$this->adapter
-			->setName('rdn-doctrine:proxies:generate')
+			->setName('doctrine:proxies:generate')
 			->setDescription('Generate proxy classes for all entities')
 			->addOption(
 				'em',
