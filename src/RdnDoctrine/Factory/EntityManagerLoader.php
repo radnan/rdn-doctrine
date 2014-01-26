@@ -55,7 +55,7 @@ class EntityManagerLoader implements AbstractFactoryInterface
 		$defaultSpec = $config['rdn_entity_managers']['configs']['EntityManagerLoader'];
 		foreach ($moduleNames as $moduleName)
 		{
-			$module = $services->get('ModuleManager')->getModule($moduleName);
+			$module = $modules->getModule($moduleName);
 			if ($module)
 			{
 				$mName = strstr(get_class($module), '\\', true);
