@@ -124,6 +124,8 @@ class User
 }
 ~~~
 
+The `RdnDoctrine\EntityManager\AliasResolver` service is used to resolve aliases when one is not provided.
+
 ### Console commands
 
 The module also comes with a set of console commands to manage the database schema and generate proxies.
