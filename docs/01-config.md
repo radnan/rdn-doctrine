@@ -174,7 +174,7 @@ The event will contain the parameters:
 array(
 	'sql' => '...', // SQL query
 	'parameters' => [], // query parameters
-	'types' => $types, // query parameter types
+	'types' => [], // query parameter types
 	'start' => 123.12, // query start time in micro-seconds
 	'stop' => 123.12, // query stop time in micro-seconds
 	'elapse' => 123.12, // total query time in micro-seconds
