@@ -88,6 +88,12 @@ class User
 }
 ~~~
 
+### Console commands
+
+The module also comes with a set of console commands to manage the database schema and generate proxies.
+
+You can run `vendor/bin/console` to run and get help on the console commands in the `doctrine:` namespace.
+
 ### Shared entities
 
 Usually you will have one module that will contain all your common entities such as User entities etc. You will also register a single entity manager for your application with the same name as this module.
