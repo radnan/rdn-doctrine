@@ -112,7 +112,7 @@ The `RdnDoctrine\EntityManager\AliasResolver` service is used to resolve aliases
 
 Specify an array of filesystem locations where entity classes can be located.
 
-The default is created dynamically by using the **ModuleName** as the key and **/path/to/module/src/ModuleName/Entity** as the namespace. If the module implements a `getPath()` method then `"/Entity"` is appended to the output of that and used instead. We use the same strategy as `entity_namespaces` to select the default modules.
+The default is created dynamically by using the **ModuleName** as the key and **/path/to/module/src/ModuleName/Entity** as the path. If the module implements a `getPath()` method then `"/Entity"` is appended to the output of that and used instead as the path. We use the same strategy as `entity_namespaces` to select the default modules.
 
 [Doctrine documentation on metadata paths](http://docs.doctrine-project.org/en/latest/reference/advanced-configuration.html#metadata-driver-required)
 
