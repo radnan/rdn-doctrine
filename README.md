@@ -88,7 +88,7 @@ class User
 }
 ~~~
 
-### Multiple modules
+### Shared entities
 
 Usually you will have one module that will contain all your common entities such as User entities etc. You will also register a single entity manager for your application with the same name as this module.
 
