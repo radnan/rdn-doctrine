@@ -48,7 +48,7 @@ If case of an **array**, the loader will simply pass it as the first argument to
 
 Specify custom hydration modes as an array of **names** to **class names**.
 
-[Doctrine documentation on hydration modes](todo)
+[Doctrine documentation on hydration modes](http://docs.doctrine-project.org/en/2.1/reference/dql-doctrine-query-language.html#custom-hydration-modes)
 
 **Default:** `array()`
 
@@ -56,7 +56,7 @@ Specify custom hydration modes as an array of **names** to **class names**.
 
 Specify custom DQL datetime functions as an array of **names** to **class names**.
 
-[Doctrine documentation on datetime functions](todo)
+[Doctrine documentation on datetime functions](http://docs.doctrine-project.org/en/2.1/reference/dql-doctrine-query-language.html#adding-your-own-functions-to-the-dql-language)
 
 **Default:** `array()`
 
@@ -64,7 +64,7 @@ Specify custom DQL datetime functions as an array of **names** to **class names*
 
 Specify custom DQL numeric functions as an array of **names** to **class names**.
 
-[Doctrine documentation on numeric functions](todo)
+[Doctrine documentation on numeric functions](http://docs.doctrine-project.org/en/2.1/reference/dql-doctrine-query-language.html#adding-your-own-functions-to-the-dql-language)
 
 **Default:** `array()`
 
@@ -72,7 +72,7 @@ Specify custom DQL numeric functions as an array of **names** to **class names**
 
 Specify custom DQL string functions as an array of **names** to **class names**.
 
-[Doctrine documentation on string functions](todo)
+[Doctrine documentation on string functions](http://docs.doctrine-project.org/en/2.1/reference/dql-doctrine-query-language.html#adding-your-own-functions-to-the-dql-language)
 
 **Default:** `array()`
 
@@ -80,7 +80,7 @@ Specify custom DQL string functions as an array of **names** to **class names**.
 
 Specify custom filters as an array of **names** to **class names**.
 
-[Doctrine documentation on filters](todo)
+[Doctrine documentation on filters](http://docs.doctrine-project.org/en/latest/reference/filters.html)
 
 **Default:** `array()`
 
@@ -102,7 +102,7 @@ Specify mappings between an **alias** and the **namespace** containing entities 
 
 The default is created dynamically by using the **ModuleName** as the key and **ModuleName\Entity** as the namespace. First we assume there is a module with the same name as the entity manager. Then we collect all the modules that point to this entity manager as their default manager.
 
-[Doctrine documentation on entity namespaces](todo)
+The `RdnDoctrine\EntityManager\AliasResolver` service is used to resolve aliases when one is not provided.
 
 **Default:** `array('ModuleName' => 'ModuleName\\Entity')`
 
@@ -112,7 +112,7 @@ Specify an array of filesystem locations where entity classes can be located.
 
 The default is created dynamically by using the **ModuleName** as the key and **/path/to/module/src/ModuleName/Entity** as the namespace. If the module implements a `getPath()` method then `"/Entity"` is appended to the output of that and used instead. We use the same strategy as `entity_namespaces` to select the default modules.
 
-[Doctrine documentation on metadata paths](todo)
+[Doctrine documentation on metadata paths](http://docs.doctrine-project.org/en/latest/reference/advanced-configuration.html#metadata-driver-required)
 
 **Default:** `array('ModuleName' => 'ModuleName\\Entity')`
 
@@ -124,9 +124,7 @@ An array of **ModuleName** to **table prefix**.  This is used by the default nam
 
 ### `simple_annotation`
 
-Whether to use simple annotations. You must enable to this to use annotation namespaces (`@ORM\Entity`).
-
-[Doctrine documentation on annotation namespaces](todo)
+Whether to use simple annotations. You must enable to this to use annotations without namespaces like `@Entity` (instead of `@ORM\Entity`).
 
 **Default:** `false`
 
@@ -134,7 +132,7 @@ Whether to use simple annotations. You must enable to this to use annotation nam
 
 Whether to auto generate proxy classes each time a proxy class is requested.
 
-[Doctrine documentation on proxy auto generation](todo)
+[Doctrine documentation on proxy auto generation](http://docs.doctrine-project.org/en/latest/reference/advanced-configuration.html#auto-generating-proxy-classes-optional)
 
 **Default:** `Doctrine\ORM\Proxy\ProxyFactory::AUTOGENERATE_ALWAYS`
 
@@ -142,7 +140,7 @@ Whether to auto generate proxy classes each time a proxy class is requested.
 
 Namespace for generated entity classes.
 
-[Doctrine documentation on proxy namespace](todo)
+[Doctrine documentation on proxy namespace](http://docs.doctrine-project.org/en/latest/reference/advanced-configuration.html#proxy-namespace-required)
 
 **Default:** `'<ManagerName>\\Entity\\Proxy'`
 
@@ -150,7 +148,7 @@ Namespace for generated entity classes.
 
 The filepath where generated proxy classes will be stored.
 
-[Doctrine documentation on proxy path](todo)
+[Doctrine documentation on proxy dir](http://docs.doctrine-project.org/en/latest/reference/advanced-configuration.html#proxy-directory-required)
 
 **Default:** `'data/proxies'`
 
