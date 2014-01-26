@@ -50,7 +50,15 @@ return array(
 				'custom_numeric_functions' => array(),
 				'custom_string_functions' => array(),
 				'filters' => array(),
-				'types' => array(),
+				'types' => array(
+					/*
+					 * Doctrine doesn't yet support enums. So we just use the
+					 * `string` type instead.
+					 */
+					'string' => array(
+						'dbType' => 'enum',
+					),
+				),
 
 				'entity_namespaces' => array(),
 				'metadata_paths' => array(),

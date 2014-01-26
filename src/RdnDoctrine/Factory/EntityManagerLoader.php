@@ -239,13 +239,26 @@ class EntityManagerLoader implements AbstractFactoryInterface
 	{
 		$platform = $entities->getConnection()->getDatabasePlatform();
 
-		// Doctrine doesn't yet support enums
-		$platform->registerDoctrineTypeMapping('enum', 'string');
-
-		foreach ($spec['types'] as $name => $classname)
+		foreach ($spec['types'] as $name => $options)
 		{
-			Type::addType($name, $classname);
-			$platform->registerDoctrineTypeMapping($name, $name);
+			if (is_string($options))
+			{
+				$className = $options;
+				$dbType = $name;
+			}
+			else
+			{
+				$name = isset($options['name']) ? $options['name'] : $name;
+				$className = isset($options['className']) ? $options['className'] : null;
+				$dbType = $options['dbType'];
+			}
+
+			if (!Type::hasType($name) && isset($className))
+			{
+				Type::addType($name, $className);
+			}
+
+			$platform->registerDoctrineTypeMapping($dbType, $name);
 		}
 	}
 }

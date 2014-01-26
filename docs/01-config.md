@@ -86,11 +86,15 @@ Specify custom filters as an array of **names** to **class names**.
 
 ### `types`
 
-Specify custom types as an array of **names** to **class names**.
+Specify custom types as an array of **names** to **options** where options can be a **string** or an **array**.
 
-[Doctrine documentation on types](todo)
+If a **string**, the option is used as the class name for the type and the name is used as both the db type and the doctrine type name.
 
-**Default:** `array()`
+If an **array**, the array is expected to have the `dbType` key. You can also optionally provide the `name` and `className` key.
+
+[Doctrine documentation on types](http://docs.doctrine-project.org/en/latest/cookbook/custom-mapping-types.html)
+
+**Default:** `array('string' => array('dbType' => 'enum'))`
 
 ### `entity_namespaces`
 
