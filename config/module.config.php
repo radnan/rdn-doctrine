@@ -33,8 +33,36 @@ return array(
 		'abstract_factories' => array(
 			'EntityManagerLoader' => 'RdnDoctrine\Factory\EntityManagerLoader',
 		),
+
 		'managers' => array(),
+
 		'modules' => array(),
+
+		'configs' => array(
+			'EntityManagerLoader' => array(
+				'cache_provider' => 'ArrayCache',
+				'cache_dir' => 'data/cache/doctrine',
+
+				'connection' => 'default',
+
+				'custom_hydration_modes' => array(),
+				'custom_datetime_functions' => array(),
+				'custom_numeric_functions' => array(),
+				'custom_string_functions' => array(),
+				'filters' => array(),
+				'types' => array(),
+
+				'entity_namespaces' => array(),
+				'metadata_paths' => array(),
+				'simple_annotation' => false,
+
+				'proxy_autogenerate' => \Doctrine\ORM\Proxy\ProxyFactory::AUTOGENERATE_ALWAYS,
+				'proxy_namespace' => null,
+				'proxy_path' => 'data/proxies',
+
+				'log_sql' => true,
+			),
+		),
 	),
 
 	'service_manager' => array(

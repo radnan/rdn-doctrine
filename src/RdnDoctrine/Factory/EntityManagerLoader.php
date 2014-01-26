@@ -52,29 +52,7 @@ class EntityManagerLoader implements AbstractFactoryInterface
 			$moduleNames[] = $rName;
 		}
 
-		$defaultSpec = array(
-			'cache_provider' => 'ArrayCache',
-			'cache_dir' => 'data/cache/doctrine',
-
-			'connection' => 'default',
-
-			'custom_hydration_modes' => array(),
-			'custom_datetime_functions' => array(),
-			'custom_numeric_functions' => array(),
-			'custom_string_functions' => array(),
-			'filters' => array(),
-			'types' => array(),
-
-			'entity_namespaces' => array(),
-			'metadata_paths' => array(),
-			'simple_annotation' => false,
-
-			'proxy_autogenerate' => true,
-			'proxy_namespace' => null,
-			'proxy_path' => 'data/proxies',
-
-			'log_sql' => true,
-		);
+		$defaultSpec = $config['rdn_entity_managers']['configs']['EntityManagerLoader'];
 		foreach ($moduleNames as $moduleName)
 		{
 			$module = $services->get('ModuleManager')->getModule($moduleName);
