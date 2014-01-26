@@ -36,7 +36,7 @@ return array(
 );
 ~~~
 
-Configuring an entity manager is as simple as that! Here we've configured an entity manager with the name **App**. Aassuming our module name is also **App** the library will set you up with some sane defaults, all of which you can override.
+Configuring an entity manager is as simple as that! Here we've configured an entity manager with the name **App**. Assuming our module name is also **App** the library will set you up with some sane defaults, all of which you can override.
 
 By default, the manager will expect your entities to live inside the `App\Entity` namespace (or more generally `<MANAGER-NAME>\Entity`).
 
