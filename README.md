@@ -124,7 +124,7 @@ class User
 }
 ~~~
 
-The `RdnDoctrine\EntityManager\AliasResolver` service is used to resolve aliases when one is not provided.
+The `RdnDoctrine\EntityManager\AliasResolver` service is used to resolve aliases when one is not provided. For example, if `User` is given instead of `App:User`.
 
 #### Code completion
 
