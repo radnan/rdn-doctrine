@@ -141,7 +141,6 @@ use Zend\Mvc\Controller\AbstractActionController;
 abstract class AbstractController extends AbstractActionController
 {
 }
-
 ~~~
 
 Then, simply extend your controllers off of this abstract controller.
