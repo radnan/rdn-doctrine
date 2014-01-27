@@ -126,6 +126,26 @@ class User
 
 The `RdnDoctrine\EntityManager\AliasResolver` service is used to resolve aliases when one is not provided.
 
+#### Code completion
+
+If you'd like to have code completion for this plugin, include the following in your <code>AbstractController</code> class:
+
+~~~php
+namespace App\Controller;
+
+use Zend\Mvc\Controller\AbstractActionController;
+
+/**
+ * @method \Doctrine\ORM\EntityRepository|\Doctrine\ORM\EntityManager entity(\string $name = null) Get the entity manager or a repository for given entity name.
+ */
+abstract class AbstractController extends AbstractActionController
+{
+}
+
+~~~
+
+Then, simply extend your controllers off of this abstract controller.
+
 ### Console commands
 
 The module also comes with a set of console commands to manage the database schema and generate proxies.
