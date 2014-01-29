@@ -64,7 +64,9 @@ You can also use the **managers** key to quickly generate an entity manager usin
 return array(
 	'rdn_entity_managers' => array(
 		'managers' => array(
-			'App' => array(),
+			'App' => array(
+				/* configuration options */
+			),
 		),
 	),
 );
