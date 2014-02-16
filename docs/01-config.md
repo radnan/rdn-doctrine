@@ -118,6 +118,12 @@ The default is created dynamically by using the **ModuleName** as the key and **
 
 **Default:** `array('<ModuleName>' => '<ModuleName>\\Entity')`
 
+### `naming_strategy`
+
+The naming strategy class name.
+
+**Default:** `'RdnDoctrine\ORM\Mapping\DefaultNamingStrategy'`
+
 ### `table_prefixes`
 
 An array of **ModuleName** to **table prefix**.  This is used by the default naming strategy class `RdnDoctrine\ORM\Mapping\DefaultNamingStrategy` to prepend a prefix to entity table names.

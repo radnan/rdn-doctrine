@@ -7,7 +7,6 @@ use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\EntityManager;
 use RdnDoctrine\DBAL\Logging\Profiler;
-use RdnDoctrine\ORM\Mapping\DefaultNamingStrategy;
 use Zend\Db\Adapter\Adapter;
 use Zend\ServiceManager\AbstractFactoryInterface;
 use Zend\ServiceManager\ServiceLocatorAwareInterface;
@@ -184,12 +183,16 @@ class EntityManagerLoader implements AbstractFactoryInterface
 
 	protected function setupNamingStrategy(Configuration $config, $spec)
 	{
-		$strategy = new DefaultNamingStrategy;
-		$config->setNamingStrategy($strategy);
-
-		if (isset($spec['table_prefixes']))
+		$strategyClass = $spec['naming_strategy'];
+		if (isset($strategyClass))
 		{
-			$strategy->setTablePrefixes($spec['table_prefixes']);
+			$strategy = new $strategyClass;
+			$config->setNamingStrategy($strategy);
+
+			if (isset($spec['table_prefixes']) && method_exists($strategy, 'setTablePrefixes'))
+			{
+				$strategy->setTablePrefixes($spec['table_prefixes']);
+			}
 		}
 	}
 

@@ -68,6 +68,8 @@ return array(
 				'proxy_namespace' => null,
 				'proxy_dir' => 'data/proxies',
 
+				'naming_strategy' => 'RdnDoctrine\ORM\Mapping\DefaultNamingStrategy',
+
 				'log_sql' => true,
 			),
 		),
