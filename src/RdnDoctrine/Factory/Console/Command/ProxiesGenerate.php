@@ -22,11 +22,10 @@ class ProxiesGenerate extends AbstractCommandFactory
 		;
 	}
 
-	public function create()
+	protected function create()
 	{
-		$managers = $this->services->get('RdnDoctrine\EntityManagerManager');
-		$config = $this->services->get('Config');
-		$names = array_keys($config['rdn_entity_managers']['managers']);
+		$managers = $this->service('RdnDoctrine\EntityManagerManager');
+		$names = array_keys($this->config('rdn_entity_managers', 'managers'));
 
 		return new Command\ProxiesGenerate($managers, $names);
 	}

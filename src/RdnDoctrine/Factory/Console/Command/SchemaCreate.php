@@ -42,9 +42,9 @@ class SchemaCreate extends AbstractCommandFactory
 		;
 	}
 
-	public function create()
+	protected function create()
 	{
-		$managers = $this->services->get('RdnDoctrine\EntityManagerManager');
+		$managers = $this->service('RdnDoctrine\EntityManagerManager');
 		return new Command\Schema($this->name, $this->verbs, $managers);
 	}
 }
