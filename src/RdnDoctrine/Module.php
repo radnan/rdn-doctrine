@@ -2,10 +2,9 @@
 
 namespace RdnDoctrine;
 
-use Zend\ModuleManager\Feature\DependencyIndicatorInterface;
 use Zend\ModuleManager\ModuleManager;
 
-class Module implements DependencyIndicatorInterface
+class Module
 {
 	public function getConfig()
 	{
@@ -14,22 +13,8 @@ class Module implements DependencyIndicatorInterface
 
 	public function init(ModuleManager $modules)
 	{
-//		$modules->loadModule('RdnConsole');
-//		$modules->loadModule('RdnDatabase');
-//		$modules->loadModule('RdnFactory');
-	}
-
-	/**
-	 * Expected to return an array of modules on which the current one depends on
-	 *
-	 * @return array
-	 */
-	public function getModuleDependencies()
-	{
-		return array(
-			'RdnConsole',
-			'RdnDatabase',
-			'RdnFactory',
-		);
+		$modules->loadModule('RdnConsole');
+		$modules->loadModule('RdnDatabase');
+		$modules->loadModule('RdnFactory');
 	}
 }

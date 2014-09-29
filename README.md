@@ -26,20 +26,7 @@ The **RdnDoctrine** ZF2 module is a simple bridge to the Doctrine ORM library.
 
 ### Dependencies
 
-This module relies on the modules: [RdnConsole](https://github.com/radnan/rdn-console), [RdnDatabase](https://github.com/radnan/rdn-database), and [RdnFactory](https://github.com/radnan/rdn-factory). I've submitted a [pull request](https://github.com/zendframework/zf2/pull/5651) to automate this step, but for now you have to specify them manually.
-~~~php
-<?php
-
-return array(
-    'modules' => array(
-        'RdnConsole',
-        'RdnDatabase',
-        'RdnFactory',
-        'RdnDoctrine',
-        // ...
-    ),
-);
-~~~
+This module relies on the modules: [RdnConsole](https://github.com/radnan/rdn-console), [RdnDatabase](https://github.com/radnan/rdn-database), and [RdnFactory](https://github.com/radnan/rdn-factory).
 
 ## How to use
 
