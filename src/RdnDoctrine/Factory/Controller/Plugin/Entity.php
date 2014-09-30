@@ -10,7 +10,7 @@ class Entity extends AbstractFactory
 	protected function create()
 	{
 		$managers = $this->service('RdnDoctrine\EntityManagerManager');
-		$modules = $this->config('entity_managers', 'modules');
+		$modules = $this->config('rdn_entity_managers', 'modules');
 		$resolver = $this->service('RdnDoctrine\EntityManager\AliasResolver');
 		return new Plugin\Entity($managers, $modules, $resolver);
 	}
