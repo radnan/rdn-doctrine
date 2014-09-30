@@ -75,6 +75,13 @@ return array(
 		),
 	),
 
+	'rdn_factory_plugins' => array(
+		'invokables' => array(
+			'Entity' => 'RdnDoctrine\Factory\Plugin\Entity',
+			'Entities' => 'RdnDoctrine\Factory\Plugin\Entities',
+		),
+	),
+
 	'service_manager' => array(
 		'factories' => array(
 			'RdnDoctrine\EntityManagerManager' => 'RdnDoctrine\Factory\EntityManagerManager',
