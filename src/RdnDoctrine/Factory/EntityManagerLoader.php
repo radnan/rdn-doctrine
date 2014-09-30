@@ -76,7 +76,10 @@ class EntityManagerLoader implements AbstractFactoryInterface
 						$path = dirname($ref->getFileName());
 					}
 
-					$spec['metadata_paths'][$mName] = $path .'/Entity';
+					if (file_exists($path .'/Entity'))
+					{
+						$spec['metadata_paths'][$mName] = $path .'/Entity';
+					}
 				}
 			}
 
